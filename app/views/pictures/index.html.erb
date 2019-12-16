@@ -1,0 +1,24 @@
+<h1>投稿一覧</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+    <th>画像</th>
+  </tr>
+
+<% @pictures.each do |picture| %>
+  <tr>
+    <td><%= picture.title %></td>
+    <td><%= picture.content %></td>
+    <td><%= picture.image %></td>
+
+    <td><%= link_to '詳細を確認する', picture_path(picture.id) %></td>
+  </tr>
+
+<% end %>
+</table>
+
+<br>
+
+<%= link_to '新規投稿する', new_picture_path %>
