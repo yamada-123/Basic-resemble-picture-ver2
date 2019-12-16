@@ -1,19 +1,4 @@
-<%= form_with(model: @picture, local: true) do |form| %>
-  <div class = "picture_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class = "picture_contet">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div class = "picture_field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-
-
-  <%= form.submit %>
+<% if logged_in? %>
+<h2>新規投稿する</h2>
+<%= render 'form' %>
 <% end %>

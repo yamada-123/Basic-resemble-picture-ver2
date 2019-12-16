@@ -1,0 +1,35 @@
+<h2>投稿内容を編集する</h2>
+<%= render 'form' %>
+
+<!--<%= form_with(model: @picture, local: true) do |form| %>
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class = "picture_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class = "picture_contet">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div class = "picture_field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+
+  <%= form.submit %>
+<% end %> -->
