@@ -9,4 +9,8 @@ class FavoritesController < ApplicationController
     redirect_to pictures_url, notice: "#{favorite.picture.user.name}さんのブログをお気に入り解除しました"
   end
 
+  def index
+    @favorites = current_user.favorite_pictures
+  end
+
 end

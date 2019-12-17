@@ -1,0 +1,20 @@
+<h2>お気に入り一覧</h2>
+
+<% @favorites.each do |favorite| %>
+
+
+<table>
+
+<tr>
+  <th>タイトル</th>
+  <th>内容</th>
+</tr>
+
+  <tr>
+    <td><%= favorite.title %></td>
+    <td><%= favorite.content %></td>
+    <td><%= image_tag favorite.image.url %></td>
+  </tr>
+
+  </table>
+  <% end %>

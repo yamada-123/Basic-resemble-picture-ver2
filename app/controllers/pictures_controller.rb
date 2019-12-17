@@ -31,6 +31,9 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    if @picture.user_id != current_user.id
+      redirect_to pictures_path, notice: "他人の投稿なので編集できません"
+    end
   end
 
   def update
@@ -42,8 +45,12 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    if @picture.user_id != current_user.id
+      redirect_to pictures_path, notice: "他人の投稿なので削除できません"
+    else
     @picture.destroy
     redirect_to pictures_path, notice:"投稿を削除しました"
+    end
   end
 
   def confirm

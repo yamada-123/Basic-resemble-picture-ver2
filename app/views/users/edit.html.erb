@@ -1,0 +1,34 @@
+<h2>プロフィール内容を編集する</h2>
+
+<%= form_with(model: @user,local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+        </ul>
+        </div>
+        <% end %>
+
+    <div class = "user_name">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class = "user_email">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class = "user_image">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+
+
+    <%= form.submit %>
+<% end %>
