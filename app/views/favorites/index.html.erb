@@ -1,6 +1,6 @@
 <h2>お気に入り一覧</h2>
 
-<% @favorites.each do |favorite| %>
+<% @favorite_pictures.each do |favorite_picture| %>
 
 
 <table>
@@ -11,9 +11,9 @@
 </tr>
 
   <tr>
-    <td><%= favorite.title %></td>
-    <td><%= favorite.content %></td>
-    <td><%= image_tag favorite.image.url %></td>
+    <td><%= favorite_picture.title %></td>
+    <td><%= favorite_picture.content %></td>
+    <td><%= image_tag favorite_picture.image.url %></td>
   </tr>
 
   </table>
