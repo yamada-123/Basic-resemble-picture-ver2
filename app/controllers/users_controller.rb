@@ -19,6 +19,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user.id != current_user.id
+      redirect_to user_path(current_user.id), notice: "他人のプロフィールなので編集できません"
+    end
   end
 
   def update
