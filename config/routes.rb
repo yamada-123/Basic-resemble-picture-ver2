@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  #メソッド 'コントローラ/アクション'
+  #メソッド 'コントローラ/アクショaン'
 
   # For details on the DSL available within thilss file, see http://guides.rubyonrails.org/routing.html
   resources :sessions, only: [:new, :create, :destroy]
@@ -20,3 +20,4 @@ end
 
 mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
+
