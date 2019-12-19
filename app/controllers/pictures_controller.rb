@@ -17,8 +17,10 @@ class PicturesController < ApplicationController
     else
 
     if @picture.save
-
-    redirect_to pictures_path, notice:"投稿を保存しました"
+      ContactMailer.contact_mail(@picture).deliver #投稿した時にメイラーのメソッドを呼び出す。
+    #redirect_to pictures_path, notice:"投稿を保存しました"
+    
+    redirect_to  contact_mail_picture_path(@picture), notice: "投稿を保存しました"
     else
 
       render :new
@@ -57,6 +59,10 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
     render :new if @picture.invalid?
+  end
+
+  def contact_mail
+    @picture = Picture.find(params[:id])
   end
 
 
