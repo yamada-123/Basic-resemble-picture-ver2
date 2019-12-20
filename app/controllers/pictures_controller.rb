@@ -1,5 +1,4 @@
 class PicturesController < ApplicationController
-
   before_action :set_picture, only:[:show, :edit, :update, :destroy]
   def index
     @pictures = Picture.all
@@ -20,7 +19,6 @@ class PicturesController < ApplicationController
     #redirect_to pictures_path, notice:"投稿を保存しました"
         redirect_to  contact_mail_picture_path(@picture), notice: "投稿を保存しました"
     else
-
       render :new
     end
     end
@@ -62,8 +60,6 @@ class PicturesController < ApplicationController
   def contact_mail
     @picture = Picture.find(params[:id])
   end
-
-
 
   private
 
