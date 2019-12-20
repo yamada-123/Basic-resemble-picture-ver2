@@ -15,16 +15,14 @@ class PicturesController < ApplicationController
     if params[:back]
       render :new
     else
-
     if @picture.save
       ContactMailer.contact_mail(@picture).deliver #投稿した時にメイラーのメソッドを呼び出す。
     #redirect_to pictures_path, notice:"投稿を保存しました"
-    
-    redirect_to  contact_mail_picture_path(@picture), notice: "投稿を保存しました"
+        redirect_to  contact_mail_picture_path(@picture), notice: "投稿を保存しました"
     else
 
       render :new
-      end
+    end
     end
   end
 

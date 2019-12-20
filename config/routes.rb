@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   resources :users
   resources :favorites, only: [:create, :destroy, :index]
   
-  resources :pictures do
-    collection do
-      post :confirm
-      post :contact_mail
-    end
-    member do  #idメソッドを取得する
-      get :contact_mail
-    end
+resources :pictures do
+  collection do
+    post :confirm
+    post :contact_mail
+  end
+  member do  #idメソッドを取得する
+    get :contact_mail
+  end
 end
 
 
